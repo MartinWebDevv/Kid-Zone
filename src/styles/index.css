@@ -1,3 +1,61 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* --- Kids Theme (Fun + High Contrast + AA contrast for body text) --- */
+:root {
+  /* Brand (blue-ish for trust) */
+  --brand-50:  #eef6ff;
+  --brand-100: #d9edff;
+  --brand-200: #b9dcff;
+  --brand-300: #8fc6ff;
+  --brand-400: #5fb0ff;
+  --brand-500: #2f98ff;   /* primary */
+  --brand-600: #197be6;
+  --brand-700: #135fb4;
+  --brand-800: #0d4583;
+  --brand-900: #092f5a;
+
+  /* Fun accents */
+  --sun-400:   #ffd76a;   /* yellow */
+  --berry-400: #ff6ea8;   /* pink */
+  --leaf-400:  #4bd19f;   /* green */
+  --grape-400: #8a7dff;   /* purple */
+  --orange-400:#ff9a4d;   /* orange */
+
+  /* Neutrals (soft, readable) */
+  --ink-900:   #1f2937;
+  --ink-700:   #374151;
+  --ink-500:   #6b7280;
+  --paper-50:  #fafafa;
+  --paper-100: #f4f6fb;
+  --paper-200: #e9effa;
+
+  /* UI bits */
+  --ring:      var(--brand-500);
+  --ok:        #22c55e;
+  --warn:      #f59e0b;
+  --err:       #ef4444;
+}
+
+/* Utilities that pair well with Tailwind */
+.k-card {
+  @apply rounded-2xl p-5 shadow-md ;
+}
+.k-chip {
+  @apply inline-flex items-center rounded-full px-3 py-1 text-sm font-medium;
+  background: var(--paper-200);
+  color: var(--ink-700);
+}
+.k-cta {
+  @apply inline-flex items-center justify-center rounded-xl px-5 py-2 font-semibold;
+  background: var(--brand-500);
+  color: white;
+}
+.k-cta:focus-visible { outline: 3px solid var(--ring); outline-offset: 2px; }
+
+/* Example: use arbitary Tailwind color values with CSS vars */
+.bg-brand-500 { background-color: var(--brand-500); }
+.text-brand-600 { color: var(--brand-600); }
+.bg-brand-50 { background-color: var(--brand-50); }
+.text-ink-900 { color: var(--ink-900); }
