@@ -9,6 +9,9 @@ const Subject = lazy(() => import("./pages/Subject.jsx"));
 const Parents = lazy(() => import("./pages/Parents.jsx"));
 const NotFound = lazy(() => import("./pages/NotFound.jsx"));
 
+// Lazy-loaded games
+const FindTheAnimal = lazy(() => import("./games/FindTheAnimal.jsx"));
+
 export default function App() {
   return (
     <Routes>
@@ -38,6 +41,14 @@ export default function App() {
           element={
             <Suspense fallback={<div>Loading…</div>}>
               <Subject />
+            </Suspense>
+          }
+        />
+        <Route
+          path="grade/:id/:subject/find-animal"
+          element={
+            <Suspense fallback={<div>Loading…</div>}>
+              <FindTheAnimal />
             </Suspense>
           }
         />
